@@ -1,0 +1,24 @@
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#view {
+    height: 50%;
+    width: 80%;
+}
+
+.dev {
+    background-color: black;
+}
+
+.select-wrapper input.select-dropdown {
+    background-color: #212121;
+    color: gray;
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+    background-color: #212121;
+}
