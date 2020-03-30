@@ -50,7 +50,8 @@
         </div>
 
         <div class="card grey darken-4 white-text">
-            <canvas  width="800" height="200" id="line-chart"></canvas> 
+            <canvas class="hide-on-small-only" width="800" height="200" id="line-chart-d"></canvas> 
+            <canvas class="hide-on-med-and-up" width="800" height="450" id="line-chart-m"></canvas> 
         </div>
 
     </div>
@@ -75,7 +76,32 @@
                 }
 
                 
-                new Chart(document.getElementById("line-chart"), {
+                new Chart(document.getElementById("line-chart-d"), {
+                    type: 'line',
+                    data: {
+                        labels: b,
+                        datasets: [{
+                            data: c,
+                            label: "Cases",
+                            borderColor: "#ff7043",
+                            fill: false
+                        }, {
+                            data: d,
+                            label: "Deaths",
+                            borderColor: "#b71c1c",
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: country + ' Covid-19 Cases & Deaths History'
+                        }
+                    }
+                });
+
+
+                new Chart(document.getElementById("line-chart-m"), {
                     type: 'line',
                     data: {
                         labels: b,
