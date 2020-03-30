@@ -50,15 +50,14 @@
         </div>
 
         <div class="card grey darken-4 white-text">
-            <canvas width="400px" height="100px" id="line-chart"></canvas>
+            <canvas  width="800" height="200" id="line-chart"></canvas> 
         </div>
 
     </div>
     <script>
 
         function graph(){
-            var getcountry = document.getElementById("countryName").value;
-            country = getcountry.toLowerCase();
+            var country = document.getElementById("countryName").value;
         fetch('https://corona.lmao.ninja/v2/historical')
             .then((response) => {
                 return response.json();
@@ -75,12 +74,7 @@
                     }
                 }
 
-
-
-                //console.log(b[10]);
-                ///console.log(c[10]);
-                //console.log(b.length);
-
+                
                 new Chart(document.getElementById("line-chart"), {
                     type: 'line',
                     data: {
@@ -100,7 +94,7 @@
                     options: {
                         title: {
                             display: true,
-                            text: getcountry + ' Covid-19 Cases & Deaths History'
+                            text: country + ' Covid-19 Cases & Deaths History'
                         }
                     }
                 });
