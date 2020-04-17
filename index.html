@@ -59,7 +59,7 @@
 
         function graph(){
             var country = document.getElementById("countryName").value;
-        fetch('https://corona.lmao.ninja/v2/historical')
+        fetch('https://corona.lmao.ninja/v2/historical?lastdays=30')
             .then((response) => {
                 return response.json();
             })
@@ -143,7 +143,7 @@
 
 
 <script>
-    fetch('https://corona.lmao.ninja/all')
+    fetch('https://corona.lmao.ninja/v2/all?yesterday=false')
         .then((response) => {
             return response.json();
         })
@@ -179,7 +179,7 @@
         let country = document.getElementById("countryName").value;
 
         var countryData = [];
-        fetch('https://corona.lmao.ninja/countries')
+        fetch('https://corona.lmao.ninja/v2/countries?yesterday=false&sort=cases')
             .then((response) => {
                 return response.json();
             })
